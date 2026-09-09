@@ -147,4 +147,5 @@
     <setting id="MenuCustom6LabelDB" type="string">Custom 6</setting>
     <setting id="movie.main_menu_icon" type="string"></setting>
     <setting id="tvshow.main_menu_icon" type="string"></setting>
+    <setting id="listfocusstyle" type="string">Default</setting>
 </settings>

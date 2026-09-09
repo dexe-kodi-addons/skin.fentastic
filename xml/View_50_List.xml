@@ -149,7 +149,8 @@
 				<ondown>$PARAM[list_id]</ondown>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
 				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
-				<focusedlayout height="85">
+				<!-- LIST (ListContainer, all content): Default -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Default) | String.IsEmpty(Skin.String(ListFocusStyle))">
 					<control type="label">
 						<left>70</left>
 						<right>20</right>
@@ -159,6 +160,538 @@
 						<scroll>true</scroll>
 						<scrollspeed>300</scrollspeed>
 						<font>font52_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Background Solid -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Background Solid)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font45_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Background Dark -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Background Dark)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="dialog_bg">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font45_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Background Light -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Background Light)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="button_focus2">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font45_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Background Transparent -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Background Transparent)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="66000000">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font45_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Border Solid -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Border Solid)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="white">masks/focus.png</texture>
+						<include>Animation_FocusTextureFade</include>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font40_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Border Dark -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Border Dark)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<include>Animation_FocusTextureFade</include>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="dialog_bg">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font40_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Border Light -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Border Light)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<include>Animation_FocusTextureFade</include>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="black">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="button_focus2">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="33000000">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font40_title</font>
+						<label>$VAR[ListLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font32</font>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<centertop>50%</centertop>
+						<width>37</width>
+						<height>37</height>
+						<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+				<!-- LIST (ListContainer, all content): Border Transparent -->
+				<focusedlayout height="85" condition="String.IsEqual(Skin.String(ListFocusStyle),Border Transparent)">
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>0</left>
+						<right>0</right>
+						<top>2</top>
+						<bottom>5</bottom>
+						<texture colordiffuse="button_focus2">masks/focus.png</texture>
+						<include>Animation_FocusTextureFade</include>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="image">
+						<animation type="Focus" condition="!Skin.HasSetting(NoFocusAnimations)" reversible="false">
+							<effect type="zoom" end="102" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="97" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<left>3</left>
+						<right>3</right>
+						<top>5</top>
+						<bottom>8</bottom>
+						<texture colordiffuse="99000000">masks/focus.png</texture>
+						<visible>Control.hasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<right>20</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<scrollspeed>300</scrollspeed>
+						<font>font45_title</font>
 						<label>$VAR[ListLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
@@ -740,5 +1273,5 @@
 			</control>
 		</definition>
 	</include>
-	
+
 </includes>

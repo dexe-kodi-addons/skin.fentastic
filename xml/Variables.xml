@@ -350,10 +350,14 @@
 		<!-- Audio/Subtitles buttons set to open settings -->
 		<value condition="Control.HasFocus(70056) + String.IsEqual(Skin.String(OSDAudioButtonMode),Audio settings)">$LOCALIZE[31620]</value>
 		<value condition="Control.HasFocus(70057) + String.IsEqual(Skin.String(OSDSubtitleButtonMode),Subtitle settings)">$LOCALIZE[31621]</value>
+		<!-- No subtitles available: button falls back to settings dialog -->
+		<value condition="Control.HasFocus(70057) + !VideoPlayer.HasSubtitles">$LOCALIZE[31621]</value>
 		<!-- Audio/Subtitles buttons set to cycle next language -->
+		<value condition="Control.HasFocus(70056) + [String.IsEmpty(VideoPlayer.AudioLanguage) | String.IsEqual(VideoPlayer.AudioLanguage,und)]">$LOCALIZE[31618] ($LOCALIZE[13205])</value>
 		<value condition="Control.HasFocus(70056)">$LOCALIZE[31618] ([CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE])</value>
-		<value condition="Control.HasFocus(70057) + VideoPlayer.SubtitlesEnabled">$LOCALIZE[31619] ([CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE])</value>
-		<value condition="Control.HasFocus(70057) + !VideoPlayer.SubtitlesEnabled">$LOCALIZE[31619] (Disabled)</value>
+		<value condition="Control.HasFocus(70057) + !VideoPlayer.SubtitlesEnabled">$LOCALIZE[31619] ($LOCALIZE[1223])</value>
+		<value condition="Control.HasFocus(70057) + [String.IsEmpty(VideoPlayer.SubtitlesLanguage) | String.IsEqual(VideoPlayer.SubtitlesLanguage,und)]">$LOCALIZE[31619] ($LOCALIZE[13205])</value>
+		<value condition="Control.HasFocus(70057)">$LOCALIZE[31619] ([CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE])</value>
 		<!-- Subtitle offset button -->
 		<value condition="Control.HasFocus(70058)">$LOCALIZE[31622]</value>
 		<!-- Estuary default subtitle button -->
@@ -1108,9 +1112,21 @@
 		<value condition="!String.IsEmpty(ListItem.Premiered) + !Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Premiered,[B]Aired: [/B]][CR]</value>
 	</variable>
 	<!-- MPAA Rating -->
+	<variable name="RI_Year_Season">
+		<value condition="!String.IsEmpty(ListItem.Year) + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Year]</value>
+		<value condition="!String.IsEmpty(ListItem.Premiered) + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Premiered]</value>
+		<value condition="!String.IsEmpty(ListItem.Year) + !Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Year,[B]Released: [/B]][CR]</value>
+		<value condition="!String.IsEmpty(ListItem.Premiered) + !Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Premiered,[B]Aired: [/B]][CR]</value>
+	</variable>
 	<variable name="RI_Mpaa_Season">
+		<value condition="!String.IsEmpty(ListItem.Mpaa) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Premiered)] + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Mpaa,[B] • [/B]]</value>
 		<value condition="!String.IsEmpty(ListItem.Mpaa) + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Mpaa]</value>
 		<value condition="!String.IsEmpty(ListItem.Mpaa) + !Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Mpaa,[B]Rated: [/B]][CR]</value>
+	</variable>
+	<variable name="RI_Network_Season">
+		<value condition="!String.IsEmpty(ListItem.Studio) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(ListItem.Mpaa)] + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Studio,[B] • [/B]]</value>
+		<value condition="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Studio]</value>
+		<value condition="!String.IsEmpty(ListItem.Studio) + !Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Studio,[B]Network: [/B]][CR]</value>
 	</variable>
 	<variable name="RI_Mpaa">
 		<value condition="!String.IsEmpty(ListItem.Mpaa) + Skin.HasSetting(Enable.AlternateInfo)">$INFO[ListItem.Mpaa,[B] • [/B]]</value>
@@ -1232,8 +1248,7 @@
 		<!-- SHOWS -->
 		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,tvshow)">$VAR[RI_Year]$VAR[RI_Mpaa]$VAR[RI_Network]$VAR[RI_Genre]$VAR[RI_RuntimeEpisodes]$VAR[RI_TotalSeasons]$VAR[RI_Status]$VAR[RI_Endsat]</value>
 		<!-- SEASONS -->
-		<!-- TODO Fix seasons not showing release year -->
-		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,season)">$VAR[RI_Mpaa_Season]$VAR[RI_Network]$VAR[RI_Genre]$VAR[RI_RuntimeEpisodes]$VAR[RI_Endsat]</value>
+		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,season)">$VAR[RI_Year_Season]$VAR[RI_Mpaa_Season]$VAR[RI_Network_Season]$VAR[RI_Genre]$VAR[RI_RuntimeEpisodes]$VAR[RI_Endsat]</value>
 		<!-- EPISODES -->
 		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,episode)">$VAR[RI_Aired]$VAR[RI_Mpaa]$VAR[RI_Network]$VAR[RI_RuntimeEpisodes]$VAR[RI_Endsat]</value>
 	</variable>
@@ -1250,7 +1265,7 @@
 		<!-- SHOWS -->
 		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,tvshow)">$VAR[_Year]$VAR[_Mpaa]$VAR[_Network]$VAR[_Genre]$VAR[_RuntimeEpisodes]$VAR[_TotalSeasons]$VAR[_Status]$VAR[_Endsat][CR]$VAR[_Plot][CR]</value>
 		<!-- SEASONS -->
-		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,season)">$VAR[_Mpaa_Season]$VAR[_Network]$VAR[_Genre]$VAR[_RuntimeEpisodes]$VAR[_Endsat][CR]$VAR[_Plot][CR]</value>
+		<value condition="!ListItem.IsCollection + String.IsEqual(ListItem.DBtype,season)">$VAR[_Year_Season]$VAR[_Mpaa_Season]$VAR[_Network_Season]$VAR[_Genre]$VAR[_RuntimeEpisodes]$VAR[_Endsat][CR]$VAR[_Plot][CR]</value>
 	</variable>
 	<!-- EPISODES -->
 	<variable name="InfoPanelEpisode">
@@ -1338,6 +1353,16 @@
 		<value condition="String.IsEqual(Skin.String(OSDSubtitleButtonMode),Disabled)">Disabled</value>
 		<value>Subtitle settings</value>
 	</variable>
+	<!-- OSD Information Year & Genre & Duration -->	
+	<variable name="VideoInfoYearGenreDuration">
+		<value condition="!String.IsEmpty(VideoPlayer.Year) + !String.IsEmpty(VideoPlayer.Genre) + !String.IsEmpty(VideoPlayer.Duration)">$INFO[VideoPlayer.Year] • $INFO[VideoPlayer.Genre] • $INFO[VideoPlayer.Duration]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Year) + !String.IsEmpty(VideoPlayer.Genre)">$INFO[VideoPlayer.Year] • $INFO[VideoPlayer.Genre]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Year) + !String.IsEmpty(VideoPlayer.Duration)">$INFO[VideoPlayer.Year] • $INFO[VideoPlayer.Duration]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Genre) + !String.IsEmpty(VideoPlayer.Duration)">$INFO[VideoPlayer.Genre] • $INFO[VideoPlayer.Duration]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Year]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Genre)">$INFO[VideoPlayer.Genre]</value>
+		<value>$INFO[VideoPlayer.Duration]</value>
+	</variable>
 	<!-- Episode 1-9 Variable -->
 	<variable name="EpisodeNumberVar">
 		<value condition="Integer.IsEqual(VideoPlayer.Episode,1)">01</value>
@@ -1351,21 +1376,45 @@
 		<value condition="Integer.IsEqual(VideoPlayer.Episode,9)">09</value>
 		<value>$INFO[VideoPlayer.Episode]</value>
 	</variable>
-	<!-- OSD Information Season/Episode & Studio -->
-	<variable name="VideoInfoSeasonStudioLabel">
+	<!-- OSD Information Season/Episode & Studio & Country -->
+	<variable name="VideoInfoSeasonStudioCountryLabel">
+		<value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEmpty(VideoPlayer.Studio) + !String.IsEmpty(VideoPlayer.Country)">S$INFO[VideoPlayer.Season,0]E$VAR[EpisodeNumberVar] • $INFO[VideoPlayer.Studio] • $INFO[VideoPlayer.Country]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEmpty(VideoPlayer.Studio)">S$INFO[VideoPlayer.Season,0]E$VAR[EpisodeNumberVar] • $INFO[VideoPlayer.Studio]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEmpty(VideoPlayer.Country)">S$INFO[VideoPlayer.Season,0]E$VAR[EpisodeNumberVar] • $INFO[VideoPlayer.Country]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Studio) + !String.IsEmpty(VideoPlayer.Country)">$INFO[VideoPlayer.Studio] • $INFO[VideoPlayer.Country]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode)">S$INFO[VideoPlayer.Season,0]E$VAR[EpisodeNumberVar]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Studio)">$INFO[VideoPlayer.Studio]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Country)">$INFO[VideoPlayer.Country]</value>
 		<value>$INFO[Player.Time] / $INFO[Player.Duration]</value>
+	</variable>
+	<!-- OSD Information Separator -->
+	<variable name="VideoInfoSeparator">
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution) | !String.IsEmpty(VideoPlayer.VideoCodec) | !String.IsEmpty(VideoPlayer.AudioCodec) | !String.IsEmpty(VideoPlayer.AudioChannels)">  |  </value>
 	</variable>
 	<!-- OSD Information Resolution -->
 	<variable name="VideoResolutionLabel">
 		<value condition="String.Contains(VideoPlayer.VideoResolution,4K)">4K</value>
 		<value condition="String.Contains(VideoPlayer.VideoResolution,2160)">4K</value>
+		<value condition="String.Contains(VideoPlayer.VideoResolution,1440)">1440p</value>
 		<value condition="String.Contains(VideoPlayer.VideoResolution,1080)">1080p</value>
 		<value condition="String.Contains(VideoPlayer.VideoResolution,720)">720p</value>
 		<value condition="String.Contains(VideoPlayer.VideoResolution,576)">576p</value>
+		<value condition="String.Contains(VideoPlayer.VideoResolution,540)">540p</value>
 		<value condition="String.Contains(VideoPlayer.VideoResolution,480)">480p</value>
 		<value>$INFO[VideoPlayer.VideoResolution]</value>
+	</variable>
+	<!-- OSD Information Media Codec -->
+	<variable name="MediaCodecLabel">
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution) + !String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec) + !String.IsEmpty(VideoPlayer.AudioChannels)">$VAR[VideoResolutionLabel] • $INFO[VideoPlayer.VideoCodec] • $INFO[VideoPlayer.AudioCodec] • $INFO[VideoPlayer.AudioChannels,, Ch]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution) + !String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)">$VAR[VideoResolutionLabel] • $INFO[VideoPlayer.VideoCodec] • $INFO[VideoPlayer.AudioCodec]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution) + !String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioChannels)">$VAR[VideoResolutionLabel] • $INFO[VideoPlayer.VideoCodec] • $INFO[VideoPlayer.AudioChannels,, Ch]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec) + !String.IsEmpty(VideoPlayer.AudioChannels)">$INFO[VideoPlayer.VideoCodec] • $INFO[VideoPlayer.AudioCodec] • $INFO[VideoPlayer.AudioChannels,, Ch]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution) + !String.IsEmpty(VideoPlayer.VideoCodec)">$VAR[VideoResolutionLabel] • $INFO[VideoPlayer.VideoCodec]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution)">$VAR[VideoResolutionLabel]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.VideoCodec)">$INFO[VideoPlayer.VideoCodec]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.AudioCodec) + !String.IsEmpty(VideoPlayer.AudioChannels)">$INFO[VideoPlayer.AudioCodec] • $INFO[VideoPlayer.AudioChannels,, Ch]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.AudioCodec)">$INFO[VideoPlayer.AudioCodec]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.AudioChannels)">$INFO[VideoPlayer.AudioChannels,, Ch]</value>
 	</variable>
 	<!-- Top Bar Button Layout -->
 	<variable name="HomeTopButtonBarLeft">

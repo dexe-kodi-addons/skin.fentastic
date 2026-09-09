@@ -1100,6 +1100,14 @@
 					<!-- Open select dialog via script (reliable method) -->
 					<onclick>RunScript(script.fentastic.helper,mode=power_mode_select)</onclick>
 				</control>
+				<!-- RELOAD SKIN -->
+				<control type="radiobutton" id="63720">
+					<label>   - Reload skin</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(PowerMenuNoReloadSkin)</selected>
+					<onclick>Skin.ToggleSetting(PowerMenuNoReloadSkin)</onclick>
+					<visible>String.IsEqual(Skin.String(PowerButtonMode),Show Shutdown Menu)</visible>
+				</control>
 				<!-- SKIN SETTINGS -->
 				<control type="radiobutton" id="63721">
 					<label>   - Skin settings</label>
@@ -1517,6 +1525,21 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(autoscroll)</onclick>
 					<selected>Skin.HasSetting(autoscroll)</selected>
+				</control>
+				<!-- LIST ITEM FOCUS STYLE -->
+				<control type="button" id="7051">
+					<label>List item focus style</label>
+					<label2>$INFO[Skin.String(ListFocusStyle)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick condition="String.IsEmpty(Skin.String(ListFocusStyle)) | String.IsEqual(Skin.String(ListFocusStyle),Default)">Skin.SetString(ListFocusStyle,Background Solid)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Background Solid)">Skin.SetString(ListFocusStyle,Background Dark)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Background Dark)">Skin.SetString(ListFocusStyle,Background Light)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Background Light)">Skin.SetString(ListFocusStyle,Background Transparent)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Background Transparent)">Skin.SetString(ListFocusStyle,Border Solid)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Border Solid)">Skin.SetString(ListFocusStyle,Border Dark)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Border Dark)">Skin.SetString(ListFocusStyle,Border Light)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Border Light)">Skin.SetString(ListFocusStyle,Border Transparent)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(ListFocusStyle),Border Transparent)">Skin.SetString(ListFocusStyle,Default)</onclick>
 				</control>
 				<!-- SEPARATOR -->
 				<control type="button" id="706">

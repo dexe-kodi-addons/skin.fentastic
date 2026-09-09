@@ -168,9 +168,9 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/next-subtitle.png"/>
 						</include>
-						<onclick condition="String.IsEqual(Skin.String(OSDSubtitleButtonMode),Subtitle settings)">ActivateWindow(osdsubtitlesettings)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(OSDSubtitleButtonMode),Next subtitle)">NextSubtitle</onclick>
-						<visible>!Skin.HasSetting(StockEstuaryVideoOSD) + !VideoPlayer.Content(LiveTV) + [String.IsEqual(Skin.String(OSDSubtitleButtonMode),Subtitle settings) | [String.IsEqual(Skin.String(OSDSubtitleButtonMode),Next subtitle) + VideoPlayer.HasSubtitles]]</visible>
+						<onclick condition="String.IsEqual(Skin.String(OSDSubtitleButtonMode),Subtitle settings) | !VideoPlayer.HasSubtitles">ActivateWindow(osdsubtitlesettings)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(OSDSubtitleButtonMode),Next subtitle) + VideoPlayer.HasSubtitles">NextSubtitle</onclick>
+						<visible>!Skin.HasSetting(StockEstuaryVideoOSD) + !VideoPlayer.Content(LiveTV) + [String.IsEqual(Skin.String(OSDSubtitleButtonMode),Subtitle settings) | String.IsEqual(Skin.String(OSDSubtitleButtonMode),Next subtitle)]</visible>
 					</control>
 					<!-- Estuary Default Subtitle Button -->
 					<control type="radiobutton" id="70059">
@@ -279,7 +279,7 @@
 				<!-- Display stream filename when paused -->
 				<control type="label">
 					<left>20</left>
-					<top>-45</top>
+					<top>-50</top>
 					<width>1880</width>
 					<height>35</height>
 					<font>font14</font>
@@ -363,21 +363,21 @@
 			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<left>40</left>
-			<top>400</top>
+			<top>340</top>
 			<width>1840</width>
-			<height>435</height>
+			<height>490</height>
 			<!-- Background -->
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
 				<width>1840</width>
-				<height>435</height>
-				<texture colordiffuse="DD000000">colors/white.png</texture>
+				<height>490</height>
+				<texture colordiffuse="CC000000">colors/white.png</texture>
 			</control>
 			<!-- Movie Poster -->
 			<control type="image">
 				<left>30</left>
-				<top>20</top>
+				<top>38</top>
 				<width>220</width>
 				<height>330</height>
 				<aspectratio align="center">keep</aspectratio>
@@ -387,7 +387,7 @@
 			<!-- TV Show Poster -->
 			<control type="image">
 				<left>30</left>
-				<top>20</top>
+				<top>38</top>
 				<width>220</width>
 				<height>330</height>
 				<aspectratio align="center">keep</aspectratio>
@@ -397,9 +397,9 @@
 			<!-- Title -->
 			<control type="label">
 				<left>290</left>
-				<top>30</top>
+				<top>20</top>
 				<width>1500</width>
-				<height>60</height>
+				<height>55</height>
 				<font>font45</font>
 				<label>$INFO[VideoPlayer.Title]</label>
 				<textcolor>button_focus</textcolor>
@@ -412,30 +412,30 @@
 				<width>1500</width>
 				<height>40</height>
 				<font>font14</font>
-				<label>$INFO[VideoPlayer.Year] • $INFO[VideoPlayer.Genre] • $INFO[VideoPlayer.Duration]</label>
+				<label>$VAR[VideoInfoYearGenreDuration]</label>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<!-- Plot -->
 			<control type="textbox">
 				<left>290</left>
-				<top>145</top>
+				<top>155</top>
 				<width>1500</width>
-				<height>180</height>
+				<height>225</height>
 				<font>font14</font>
-				<label>$INFO[VideoPlayer.Plot]</label>
+				<label>$INFO[VideoPlayer.Tagline,[B],[/B][CR]]$INFO[VideoPlayer.Plot]</label>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<autoscroll time="5000" delay="6000" repeat="10000">true</autoscroll>
 			</control>
-			<!-- Season-Episode / Studio - Video Resolution / Codec-->
+			<!-- Season-Episode / Studio / Country - Video Resolution / Codec-->
 			<control type="label">
 				<left>290</left>
-				<top>355</top>
-				<width>1450</width>
+				<top>410</top>
+				<width>1500</width>
 				<height>40</height>
 				<font>font14</font>
-				<label>$VAR[VideoInfoSeasonStudioLabel]   |   $VAR[VideoResolutionLabel] • $INFO[VideoPlayer.VideoCodec] • $INFO[VideoPlayer.AudioCodec] • $INFO[VideoPlayer.AudioChannels] Ch</label>
+				<label>$VAR[VideoInfoSeasonStudioCountryLabel]$VAR[VideoInfoSeparator]$VAR[MediaCodecLabel]</label>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>

@@ -203,7 +203,7 @@
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="155" />
-						<param name="label" value="[COLOR button_focs2]$LOCALIZE[31048]: $INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]" />
+						<param name="label" value="$LOCALIZE[31048]: $INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]" />
 						<param name="altlabel" value="$LOCALIZE[31048]: $INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Season) + !String.IsEqual(ListItem.DBType,episode)" />
 					</include>
