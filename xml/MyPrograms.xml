@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>50,52,55,500</views>
+	<views>50,52,55,58,500</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>

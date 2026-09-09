@@ -129,84 +129,60 @@
 		</definition>
 	</include>
 	
-	<include name="WideInfoWallMovieLayout">
-		<param name="focused">false</param>
-		<definition>
-			<control type="group">
-				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
-				<include content="ProgressBar">
-					<param name="left" value="37"/>
-					<param name="top" value="164"/>
-					<param name="width" value="270"/>
-				</include>
-				<control type="image">
-					<include>FocusBounce</include>
-          <left>-4</left>
-					<top>-14</top>
-          <width>354</width>
-          <height>230</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
-					<bordersize>19</bordersize>
-					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="image">
-					<include>FocusBounce</include>
-          <left>-4</left>
-					<top>-14</top>
-          <width>354</width>
-          <height>230</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
-					<bordersize>19</bordersize>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="textbox">
-					<left>165</left>
-					<top>44</top>
-					<width>142</width>
-					<height>120</height>
-					<font>font27</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
-					<autoscroll time="1000" delay="500" repeat="2000">$PARAM[focused] + Control.HasFocus($PARAM[list_id])</autoscroll>
-					<visible>!ListItem.IsParentFolder + $PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-				<control type="textbox">
-					<left>165</left>
-					<top>44</top>
-					<width>142</width>
-					<height>120</height>
-					<font>font27</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<textcolor>unfocused_text</textcolor>
-					<visible>!ListItem.IsParentFolder + ![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-				</control>
-				<control type="image">
-					<left>24</left>
-					<top>22</top>
-					<width>160</width>
-					<height>160</height>
-					<texture colordiffuse="focused_text" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
-					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-				<control type="image">
-					<left>24</left>
-					<top>22</top>
-					<width>160</width>
-					<height>160</height>
-					<texture colordiffuse="unfocused_text" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
-					<bordersize>20</bordersize>
-					<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-				</control>
-			</control>
+			<include name="WideInfoWallMovieLayout">
+    				<!-- Parameters required by the view -->
+    				<param name="focused">false</param>
+    				<param name="list_id">0</param>
+    			<definition>
+        			<control type="group">
+            				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+            			<control type="image">
+                			<left>-4</left>
+                			<top>-14</top>
+                			<width>354</width>
+                			<height>230</height>
+                			<texture colordiffuse="button_focus">masks/landscape.png</texture>
+                			<bordersize>19</bordersize>
+                			<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+            			</control>
+            			<control type="image">
+                			<zorder>10</zorder>
+                			<left>24</left>
+                			<top>22</top>
+                			<width>160</width>
+                			<height>160</height>
+                			<texture fallback="DefaultMovies.png">$INFO[ListItem.Icon]</texture>
+                			<aspectratio>scale</aspectratio>
+                			<bordersize>20</bordersize>
+            			</control>
+            			<control type="textbox">
+                			<zorder>20</zorder>
+                			<left>165</left>
+                			<top>44</top>
+                			<width>142</width>
+                			<height>120</height>
+                			<font>font27</font>
+                			<align>center</align>
+                			<aligny>center</aligny>
+                			<label>$INFO[ListItem.Label]</label>
+                			<textcolor>focused_text</textcolor>
+                			<autoscroll time="1000" delay="500" repeat="2000">$PARAM[focused] + Control.HasFocus($PARAM[list_id])</autoscroll>
+                			<visible>!ListItem.IsParentFolder + $PARAM[focused]</visible>
+            			</control>
+            			<control type="textbox">
+               				<zorder>20</zorder>
+                			<left>165</left>
+                			<top>44</top>
+                			<width>142</width>
+                			<height>120</height>
+                			<font>font27</font>
+                			<align>center</align>
+                			<aligny>center</aligny>
+                			<label>$INFO[ListItem.Label]</label>
+                			<textcolor>unfocused_text</textcolor>
+                			<visible>!ListItem.IsParentFolder + !$PARAM[focused]</visible>
+            		</control>
+        	</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
@@ -418,85 +394,60 @@
 		</definition>
 	</include>
 
-	<include name="BigWideInfoWallMovieLayout">
-		<param name="focused">false</param>
-		<definition>
-			<control type="group">
-				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
-				<include content="ProgressBar">
-					<param name="left" value="37"/>
-					<param name="top" value="164"/>
-					<param name="width" value="270"/>
-				</include>
-				<control type="image">
-					<include>FocusBounce</include>
-          <left>-4</left>
-					<top>-14</top>
-          <width>462</width>
-          <height>289</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
-					<bordersize>17</bordersize>
-					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="image">
-					<include>FocusBounce</include>
-          <left>-4</left>
-					<top>-14</top>
-          <width>462</width>
-          <height>289</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
-					<bordersize>17</bordersize>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="textbox">
-					<left>254</left>
-					<top>54</top>
-					<width>160</width>
-					<height>160</height>
-					<font>font27</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
-					<autoscroll time="2000" delay="1000" repeat="2000">$PARAM[focused] + Control.HasFocus($PARAM[list_id])</autoscroll>
-					<visible>!ListItem.IsParentFolder + $PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-				<control type="textbox">
-					<left>254</left>
-					<top>54</top>
-					<width>160</width>
-					<height>160</height>
-					<font>font27</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<textcolor>unfocused_text</textcolor>
-					<autoscroll time="2000" delay="1000" repeat="2000">$PARAM[focused] + Control.HasFocus($PARAM[list_id])</autoscroll>
-					<visible>!ListItem.IsParentFolder + ![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-				</control>
-				<control type="image">
-					<left>34</left>
-					<top>12</top>
-					<width>240</width>
-					<height>240</height>
-					<texture colordiffuse="focused_text" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
-					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
-				</control>
-				<control type="image">
-					<left>34</left>
-					<top>12</top>
-					<width>240</width>
-					<height>240</height>
-					<texture colordiffuse="unfocused_text" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
-					<bordersize>20</bordersize>
-					<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-				</control>
-			</control>
+				<include name="BigWideInfoWallMovieLayout">
+    					<param name="focused">false</param>
+    					<param name="list_id">0</param>
+
+    				<definition>
+        			<control type="group">
+            				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+            			<control type="image">
+                			<left>-4</left>
+                			<top>-14</top>
+                			<width>462</width>
+                			<height>289</height>
+                			<texture colordiffuse="button_focus">masks/landscape.png</texture>
+                			<bordersize>17</bordersize>
+                			<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+            			</control>
+            			<control type="image">
+                			<zorder>10</zorder>
+                			<left>34</left>
+                			<top>12</top>
+                			<width>240</width>
+                			<height>240</height>
+                			<texture fallback="DefaultMovies.png">$INFO[ListItem.Icon]</texture>
+                			<aspectratio>scale</aspectratio>
+                			<bordersize>20</bordersize>
+            			</control>
+            			<control type="textbox">
+                			<zorder>20</zorder>
+                			<left>254</left>
+                			<top>54</top>
+                			<width>160</width>
+                			<height>160</height>
+                			<font>font27</font>
+                			<align>center</align>
+                			<aligny>center</aligny>
+                			<label>$INFO[ListItem.Label]</label>
+                			<textcolor>focused_text</textcolor>
+                			<autoscroll time="2000" delay="1000" repeat="2000">$PARAM[focused] + Control.HasFocus($PARAM[list_id])</autoscroll>
+                			<visible>$PARAM[focused]</visible>
+            			</control>
+            			<control type="textbox">
+                			<zorder>20</zorder>
+                			<left>254</left>
+                			<top>54</top>
+                			<width>160</width>
+                			<height>160</height>
+                			<font>font27</font>
+                			<align>center</align>
+                			<aligny>center</aligny>
+                			<label>$INFO[ListItem.Label]</label>
+                			<textcolor>unfocused_text</textcolor>
+                			<visible>!$PARAM[focused]</visible>
+            			</control>
+        		</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">

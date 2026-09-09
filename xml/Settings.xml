@@ -39,6 +39,10 @@
 				<onup>noop</onup>
 				<ondown>Control.SetFocus(9001,$INFO[Container(9000).Position],absolute)</ondown>
 				<include>SettingsPanel</include>
+				<animation type="WindowOpen" condition="!Skin.HasSetting(no_slide_animations)">
+					<effect type="rotatex" start="90" end="0" center="auto" time="1000"/>
+					<effect type="zoom" start="0" end="100" center="auto" time="1000"/>
+				</animation>
 				<content>
 					<item>
 						<label>Skin settings</label>
@@ -70,6 +74,10 @@
 				<onup>Control.SetFocus(9000,$INFO[Container(9001).Position],absolute)</onup>
 				<ondown>noop</ondown>
 				<include>SettingsPanel</include>
+				<animation type="WindowOpen" condition="!Skin.HasSetting(no_slide_animations)">
+					<effect type="rotatex" start="90" end="0" center="auto" time="750"/>
+					<effect type="zoom" start="0" end="100" center="auto" time="750"/>
+				</animation>
 				<content>
 					<item>
 						<label>$LOCALIZE[14200]</label>

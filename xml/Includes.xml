@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include file="Defaults.xml" />
-	<include file="Includes_Home.xml" />
-	<include file="Includes_Animations.xml" />
-	<include file="Includes_Games.xml" />
-	<include file="Includes_MediaMenu.xml" />
-	<include file="Includes_Buttons.xml" />
-	<include file="Includes_DialogSelect.xml" />
-	<include file="Includes_MusicInfo.xml" />
-	<include file="Includes_PVR.xml" />
-	<include file="script-fentastic-main_menu_movies.xml" />
-	<include file="script-fentastic-main_menu_tvshows.xml" />
-	<include file="script-fentastic-main_menu_custom1.xml" />
-	<include file="script-fentastic-main_menu_custom2.xml" />
-	<include file="script-fentastic-main_menu_custom3.xml" />
-	<include file="script-fentastic-widget_movies.xml" />
-	<include file="script-fentastic-widget_tvshows.xml" />
-	<include file="script-fentastic-widget_custom1.xml" />
-	<include file="script-fentastic-widget_custom2.xml" />
-	<include file="script-fentastic-widget_custom3.xml" />
-	<include file="script-fentastic-search_history.xml" />
-	<include file="View_50_List.xml" />
-	<include file="View_51_Poster.xml" />
-	<include file="View_52_IconWall.xml" />
-	<include file="View_53_Shift.xml" />
-	<include file="View_54_InfoWall.xml" />
-	<include file="View_55_WideList.xml" />
-	<include file="View_56_WideInfoWall.xml" />
-	<include file="View_503_NowPlaying.xml" />
-	<include file="View_500_Wall.xml" />
-	<include file="View_501_Banner.xml" />
-	<include file="View_502_FanArt.xml" />
-	<include file="View_504_WideWall.xml" />
-	<include file="Custom_1117_ExtraInfoContent.xml"/>
-	<include file="Custom_1118_SetupGuideViewer.xml"/>
-	<include file="Custom_1119_ChangelogViewer.xml" />
-	<include file="Custom_1121_SearchResults.xml" />
-	<include file="Variables.xml" />
+	<include file="Defaults.xml"/>
+	<include file="Includes_Home.xml"/>
+	<include file="Includes_MainMenu.xml"/>
+	<include file="Includes_Animations.xml"/>
+	<include file="Includes_AddonPanel.xml"/>
+	<include file="Includes_Games.xml"/>
+	<include file="Includes_MediaMenu.xml"/>
+	<include file="Includes_Buttons.xml"/>
+	<include file="Includes_DialogSelect.xml"/>
+	<include file="Includes_MusicInfo.xml"/>
+	<include file="Includes_PVR.xml"/>
+	<include file="script-fentastic-main_menu_movies.xml"/>
+	<include file="script-fentastic-main_menu_tvshows.xml"/>
+	<include file="script-fentastic-main_menu_custom1.xml"/>
+	<include file="script-fentastic-main_menu_custom2.xml"/>
+	<include file="script-fentastic-main_menu_custom3.xml"/>
+	<include file="script-fentastic-main_menu_custom4.xml"/>
+	<include file="script-fentastic-main_menu_custom5.xml"/>
+	<include file="script-fentastic-main_menu_custom6.xml"/>
+	<include file="script-fentastic-submenu_movie.xml"/>
+	<include file="script-fentastic-submenu_tvshow.xml"/>
+	<include file="script-fentastic-submenu_custom1.xml"/>
+	<include file="script-fentastic-submenu_custom2.xml"/>
+	<include file="script-fentastic-submenu_custom3.xml"/>
+	<include file="script-fentastic-submenu_custom4.xml"/>
+	<include file="script-fentastic-submenu_custom5.xml"/>
+	<include file="script-fentastic-submenu_custom6.xml"/>
+	<include file="script-fentastic-widget_movies.xml"/>
+	<include file="script-fentastic-widget_tvshows.xml"/>
+	<include file="script-fentastic-widget_custom1.xml"/>
+	<include file="script-fentastic-widget_custom2.xml"/>
+	<include file="script-fentastic-widget_custom3.xml"/>
+	<include file="script-fentastic-widget_custom4.xml"/>
+	<include file="script-fentastic-widget_custom5.xml"/>
+	<include file="script-fentastic-widget_custom6.xml"/>
+	<include file="script-fentastic-topbar_custom_menu.xml"/>
+	<include file="script-fentastic-search_history.xml"/>
+	<include file="View_50_List.xml"/>
+	<include file="View_51_Poster.xml"/>
+	<include file="View_52_IconWall.xml"/>
+	<include file="View_53_Shift.xml"/>
+	<include file="View_54_InfoWall.xml"/>
+	<include file="View_55_WideList.xml"/>
+	<include file="View_56_WideInfoWall.xml"/>
+	<include file="View_57_Poster_Large.xml"/>
+	<include file="View_503_NowPlaying.xml"/>
+	<include file="View_500_Wall.xml"/>
+	<include file="View_501_Banner.xml"/>
+	<include file="View_502_FanArt.xml"/>
+	<include file="View_504_WideWall.xml"/>
+	<include file="Includes_ExtraInfoContent.xml"/>
+	<include file="Variables.xml"/>
 	<constant name="DepthDialog">0.50</constant>
 	<constant name="DepthDialog+">0.52</constant>
 	<constant name="DepthDialog-">0.48</constant>
@@ -79,7 +94,7 @@
 						<onright condition="![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]">50</onright>
 						<onright condition="Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)">55</onright>
 						<orientation>vertical</orientation>
-						<texturesliderbackground />
+						<texturesliderbackground/>
 						<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 						<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
@@ -97,7 +112,7 @@
 						<bottom>0</bottom>
 						<width>100%</width>
 						<height>12</height>
-						<texturesliderbackground />
+						<texturesliderbackground/>
 						<onup>50</onup>
 						<ondown>50</ondown>
 						<orientation>horizontal</orientation>
@@ -106,7 +121,7 @@
 						<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 						<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
-						<hitrect x="0" y="20" w="100%" h="40" />
+						<hitrect x="0" y="20" w="100%" h="40"/>
 					</control>
 				</control>
 			</control>
@@ -117,10 +132,10 @@
 		<top>-3000</top>
 		<width>1</width>
 		<height>1</height>
-		<texturefocus />
-		<texturenofocus />
-		<label></label>
-		<font></font>
+		<texturefocus/>
+		<texturenofocus/>
+		<label/>
+		<font/>
 	</include>
 	<include name="RatingCircle">
 		<param name="animation">False</param>
@@ -128,7 +143,7 @@
 			<control type="group">
 				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
 				<include content="UserRatingContent" condition="Skin.HasSetting(circle_userrating)">
-					<param name="infolabel" value="ListItem.UserRating" />
+					<param name="infolabel" value="ListItem.UserRating"/>
 					<param name="left" value="$PARAM[left]"/>
 					<param name="top" value="$PARAM[top]"/>
 					<param name="width" value="$PARAM[width]"/>
@@ -138,7 +153,7 @@
 					<param name="cornerdiffuse" value="$PARAM[cornerdiffuse]"/>
 				</include>
 				<include content="UserRatingContent" condition="Skin.HasSetting(circle_rating)">
-					<param name="infolabel" value="ListItem.Rating" />
+					<param name="infolabel" value="ListItem.Rating"/>
 					<param name="left" value="$PARAM[left]"/>
 					<param name="top" value="$PARAM[top]"/>
 					<param name="width" value="$PARAM[width]"/>
@@ -178,7 +193,7 @@
 		<param name="width">1152</param>
 		<param name="list_id">5000</param>
 		<param name="font">font13</param>
-		<param name="sortby"></param>
+		<param name="sortby"/>
 		<param name="sortorder">ascending</param>
 		<param name="visible">true</param>
 		<definition>
@@ -339,7 +354,7 @@
 						<align>$PARAM[align]</align>
 						<font>$PARAM[font]</font>
 						<aligny>center</aligny>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<label>$INFO[ListItem.Label]</label>
 						<textcolor>focused_text</textcolor>
 						<scroll>true</scroll>
 					</control>
@@ -385,7 +400,7 @@
 		</definition>
 	</include>
 	<include name="MediaFlags">
-		<param name="infolabel_prefix"></param>
+		<param name="infolabel_prefix"/>
 		<param name="resolution_var">$VAR[ResolutionFlagVar]</param>
 		<definition>
 			<control type="grouplist">
@@ -401,35 +416,35 @@
 					<width>140</width>
 					<visible>[System.AddonIsEnabled(resource.images.studios.white) | System.AddonIsEnabled(resource.images.studios.coloured)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
 					<include condition="!Skin.HasSetting(Disable.ColorStudio)" content="MediaFlag">
-						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]" />
+						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
 					</include>
 					<include condition="Skin.HasSetting(Disable.ColorStudio)" content="MediaFlag">
-						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.coloured/,.png]" />
+						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.coloured/,.png]"/>
 					</include>
 				</control>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoCodec)" />
+					<param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoCodec)"/>
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$PARAM[resolution_var]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution)" />
+					<param name="texture" value="$PARAM[resolution_var]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution)"/>
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[ListItem.HdrType,flags/videohdr/,.png]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.HdrType)" />
+					<param name="texture" value="$INFO[ListItem.HdrType,flags/videohdr/,.png]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.HdrType)"/>
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect)" />
+					<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect)"/>
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)" />
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)"/>
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]" />
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)" />
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]"/>
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)"/>
 				</include>
 			</control>
 		</definition>
@@ -479,8 +494,8 @@
 		</control>
 	</include>
 	<include name="FileManagerPanel">
-		<param name="width"></param>
-		<param name="right"></param>
+		<param name="width"/>
+		<param name="right"/>
 		<definition>
 			<control type="panel" id="$PARAM[list_id]">
 				<left>0</left>
@@ -596,7 +611,7 @@
 							<control type="group">
 								<top>150</top>
 								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultAddon.png" />
+									<param name="fallback_image" value="DefaultAddon.png"/>
 								</include>
 							</control>
 						</itemlayout>
@@ -605,8 +620,8 @@
 								<include>FocusBounce</include>
 								<top>150</top>
 								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultAddon.png" />
-									<param name="focused" value="true" />
+									<param name="fallback_image" value="DefaultAddon.png"/>
+									<param name="focused" value="true"/>
 								</include>
 							</control>
 						</focusedlayout>
@@ -618,7 +633,7 @@
 						<width>12</width>
 						<height>920</height>
 						<orientation>vertical</orientation>
-						<texturesliderbackground />
+						<texturesliderbackground/>
 						<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus($PARAM[group_id]30)">conditional</animation>
 						<onleft>$PARAM[group_id]50</onleft>
 						<onright>noop</onright>
@@ -627,8 +642,8 @@
 				<control type="group">
 					<left>462</left>
 					<include content="ImageWidget">
-						<param name="text_label" value="$LOCALIZE[31153]" />
-						<param name="button_label" value="$LOCALIZE[31144]" />
+						<param name="text_label" value="$LOCALIZE[31153]"/>
+						<param name="button_label" value="$LOCALIZE[31144]"/>
 						<param name="left">50</param>
 						<param name="button_onclick" value="$PARAM[imagewidget_onclick]"/>
 						<param name="button_id" value="$PARAM[group_id]333"/>
@@ -781,8 +796,8 @@
 				<top>$PARAM[posy]</top>
 				<width>28</width>
 				<height>28</height>
-				<texturefocus />
-				<texturenofocus />
+				<texturefocus/>
+				<texturenofocus/>
 				<onclick>Control.Move($PARAM[list_id],-1)</onclick>
 				<visible allowhiddenfocus="true">Container($PARAM[list_id]).HasPrevious + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]500)]</visible>
 			</control>
@@ -791,8 +806,8 @@
 				<top>$PARAM[posy]</top>
 				<width>28</width>
 				<height>28</height>
-				<texturefocus />
-				<texturenofocus />
+				<texturefocus/>
+				<texturenofocus/>
 				<onclick>Control.Move($PARAM[list_id],1)</onclick>
 				<visible allowhiddenfocus="true">Container($PARAM[list_id]).HasNext + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]501)]</visible>
 			</control>
@@ -815,8 +830,8 @@
 			<top>-2000</top>
 			<width>6000</width>
 			<height>6000</height>
-			<texturefocus />
-			<texturenofocus />
+			<texturefocus/>
+			<texturenofocus/>
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">
@@ -826,7 +841,7 @@
 				<left>-2</left>
 				<top>-2</top>
 				<right>-2</right>
-        <bottom>-2</bottom>
+				<bottom>-2</bottom>
 				<texture colordiffuse="unfocused_text">$PARAM[diffusetexture]</texture>
 			</control>
 			<control type="image">
@@ -837,13 +852,13 @@
 				<texture colordiffuse="dialog_bg">$PARAM[diffusetexture]</texture>
 			</control>
 			<control type="label" id="$PARAM[header_id]">
-				<posx>0</posx> 
+				<posx>0</posx>
 				<top>20</top>
-				<width>$PARAM[width]</width> 
+				<width>$PARAM[width]</width>
 				<height>70</height>
 				<font>font32_title</font>
 				<label>$PARAM[header_label]</label>
-				<align>center</align> 
+				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>unfocused_text</textcolor>
 				<shadowcolor>black</shadowcolor>
@@ -855,9 +870,9 @@
 				<height>48</height>
 				<radiowidth>48</radiowidth>
 				<radioheight>48</radioheight>
-				<texturefocus />
-				<texturenofocus />
-				<label></label>
+				<texturefocus/>
+				<texturenofocus/>
+				<label/>
 				<textureradioofffocus colordiffuse="EEFFFFFF">dialogs/close.png</textureradioofffocus>
 				<textureradiooffnofocus colordiffuse="accent_color">special://xbmc/media/vendor_icon.png</textureradiooffnofocus>
 				<textureradioonfocus colordiffuse="EEFFFFFF">dialogs/close.png</textureradioonfocus>
@@ -895,14 +910,14 @@
 				<control type="grouplist">
 					<width>900</width>
 					<include content="TopBarLabels">
-						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]" />
+						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]"/>
 					</include>
 					<visible>Player.HasMedia</visible>
 				</control>
 				<control type="grouplist">
 					<width>1800</width>
 					<include content="TopBarLabels">
-						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]" />
+						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]"/>
 					</include>
 					<visible>!Player.HasMedia</visible>
 				</control>
@@ -910,11 +925,11 @@
 					<top>0</top>
 					<width>200</width>
 					<height>100</height>
-					<label></label>
+					<label/>
 					<onclick>Action(Back)</onclick>
 					<visible>!Window.IsActive(home)</visible>
-					<texturefocus />
-					<texturenofocus />
+					<texturefocus/>
+					<texturenofocus/>
 				</control>
 				<control type="label" id="18900">
 					<top>50</top>
@@ -928,26 +943,28 @@
 					<animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
 				</control>
 				<control type="grouplist">
-					<top>0</top>
-					<align>right</align>
-					<right>20</right>
-					<height>200</height>
-					<orientation>horizontal</orientation>
+					<top>20</top>
+					<right>23</right>
 					<width>1100</width>
+					<height>100</height>
+					<orientation>horizontal</orientation>
+					<align>right</align>
 					<itemgap>10</itemgap>
-					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying)</visible>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying) + ![Window.IsActive(home) + Skin.HasSetting(FENtasticHybrid)]</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<control type="group">
 						<width>600</width>
+						<height>100</height>
 						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
-							<left>-75</left>
-							<orientation>horizontal</orientation>
-							<height>38</height>
-							<top>14</top>
-							<align>right</align>
+							<left>-121</left>
+							<top>20</top>
 							<width>660</width>
+							<height>38</height>
+							<orientation>horizontal</orientation>
+							<align>right</align>
 							<itemgap>5</itemgap>
 							<usecontrolcoords>true</usecontrolcoords>
 							<control type="image">
@@ -964,73 +981,133 @@
 								<shadowcolor>text_shadow</shadowcolor>
 								<height>35</height>
 								<width min="1" max="602">auto</width>
+								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="label" id="7700">
-							<label>$VAR[NowPlayingSublabelVar]</label>
-							<left>-44</left>
-							<top>44</top>
+							<left>-90</left>
+							<top>50</top>
+							<width>630</width>
+							<height>25</height>
 							<font>font12</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$VAR[NowPlayingSublabelVar]</label>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
-							<height>25</height>
-							<width>630</width>
-							<align>right</align>
 							<scroll>true</scroll>
 						</control>
 					</control>
+					<!-- PROFILE NAME -->
 					<control type="group">
-						<visible>Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia</visible>
-						<control type="image">
-							<visible>Skin.HasSetting(show_profileavatar)</visible>
-							<top>25</top>
-							<left>-70</left>
-							<width>50</width>
-							<height>50</height>
-							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
-							<texture>$INFO[System.ProfileThumb]</texture>
-							<aspectratio>scale</aspectratio>
-						</control>
+						<width>360</width>
+						<height>100</height>
+						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profilename) | Skin.HasSetting(show_profileboth)]</visible>
 						<control type="label">
-							<visible>Skin.HasSetting(show_profilename)</visible>
+							<top>-2</top>
+							<right>0</right>
+							<width>360</width>
+							<height>100</height>
 							<font>font45</font>
 							<align>right</align>
-							<left>-630</left>
-							<shadowcolor>text_shadow</shadowcolor>
 							<aligny>center</aligny>
-							<height>110</height>
-							<width max="600">auto</width>
+							<shadowcolor>text_shadow</shadowcolor>
 							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 							<label>$INFO[System.ProfileName]</label>
 							<textcolor>unfocused_text</textcolor>
 						</control>
 					</control>
-					<control type="image">
-						<width>60</width>
+					<!-- PROFILE AVATAR -->
+					<control type="group">
+						<width>70</width>
 						<height>100</height>
-						<fadetime>300</fadetime>
-						<aspectratio aligny="center" align="left">keep</aspectratio>
-						<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+						<control type="image">
+							<left>0</left>
+							<top>15</top>
+							<width>70</width>
+							<height>70</height>
+							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+							<texture>$INFO[System.ProfileThumb]</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
 					</control>
+					<!-- PROFILE NAME DIVIDER -->
 					<control type="label">
-						<font>font_clock_small</font>
-						<height>100</height>
+						<top>-1</top>
 						<width>auto</width>
-						<aligny>center</aligny>
+						<height>100</height>
+						<font>font_clock_small</font>
 						<align>right</align>
-						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] [COLOR accent_color][B] • [/B][/COLOR]</label>
+						<aligny>center</aligny>
+						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
 						<textcolor>unfocused_text</textcolor>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + Skin.HasSetting(show_profilename)</visible>
 					</control>
+					<!-- PROFILE AVATAR DIVIDER -->
 					<control type="label">
-						<font>font_clock</font>
+						<top>-1</top>
+						<width>auto</width>
+						<height>100</height>
+						<font>font_clock_small</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+					</control>
+					<!-- WEATHER ICON -->
+					<control type="group">
+						<width>70</width>
+						<height>100</height>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + !String.IsEqual(Weather.FanartCode,na)</visible>
+						<control type="image">
+							<left>0</left>
+							<top>10</top>
+							<width>70</width>
+							<height>70</height>
+							<fadetime>300</fadetime>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
+						</control>
+					</control>
+					<!-- WEATHER TEMPERATURE -->
+					<control type="label">
+						<top>-1</top>
+						<width>auto</width>
+						<height>100</height>
+						<font>font_clock_small</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [COLOR accent_color][B]•[/B][/COLOR]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + !String.IsEqual(Weather.FanartCode,na)</visible>
+					</control>
+					<!-- 12-HOUR CLOCK -->
+					<control type="label">
+						<width>260</width>
+						<height>100</height>
+						<font>font_clock_bold</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Time]</label>
 						<textcolor>unfocused_text</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
-						<height>200</height>
-						<width>auto</width>
+						<visible>!String.IsEmpty(System.Time(xx))</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+					</control>
+					<!-- 24-HOUR CLOCK -->
+					<control type="label">
+						<width>170</width>
+						<height>100</height>
+						<font>font_clock_bold</font>
+						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[System.Time]</label>
+						<textcolor>unfocused_text</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>String.IsEmpty(System.Time(xx))</visible>
+						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -1140,20 +1217,82 @@
 		<height>100</height>
 		<width>auto</width>
 	</include>
+	<include name="BackgroundDiffuseBrightness">
+		<animation effect="fade" start="100" end="5" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),10%)">Conditional</animation>
+		<animation effect="fade" start="100" end="15" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),20%)">Conditional</animation>
+		<animation effect="fade" start="100" end="25" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),30%)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),40%)">Conditional</animation>
+		<animation effect="fade" start="100" end="45" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),50%)">Conditional</animation>
+		<animation effect="fade" start="100" end="55" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),60%)">Conditional</animation>
+		<animation effect="fade" start="100" end="65" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),70%)">Conditional</animation>
+		<animation effect="fade" start="100" end="75" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),80%)">Conditional</animation>
+		<animation effect="fade" start="100" end="85" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),90%)">Conditional</animation>
+		<animation effect="fade" start="100" end="95" time="0" condition="String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),100%)">Conditional</animation>
+	</include>
 	<include name="ColoredBackgroundImages">
 		<control type="image">
-			<visible>[Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
-			<depth>DepthBackground</depth>
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<depth>-0.99</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
-			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/redblur.jpg">$VAR[CustomBackgroundImage]</texture>
+			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
 		</control>
 		<control type="image">
-			<visible>Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<visible>!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),Off)</visible>
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<include>BackgroundDiffuseBrightness</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="primary_background" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
-			<texture colordiffuse="CC141414" fallback="special://skin/extras/backgrounds/redblur.jpg">$VAR[CustomBackgroundImage]</texture>
+			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+			<visible>!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),Off)</visible>
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<include>BackgroundDiffuseBrightness</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="primary_background" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<visible>!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),Off)</visible>
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<include>BackgroundDiffuseBrightness</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="primary_background" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+			<visible>!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),Off)</visible>
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<include>BackgroundDiffuseBrightness</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="primary_background" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
 		</control>
 	</include>
 	<include name="DefaultBackground">
@@ -1179,7 +1318,7 @@
 					<include>RainDropAnimationBackground</include>
 				</control>
 				<control type="group" id="31111">
-					<visible>![Window.IsActive(Home) | Window.IsActive(1121)] + [![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]</visible>
+					<visible>![Window.IsActive(Home) | Window.IsActive(1121) | Window.IsActive(favouritesbrowser)] + [![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]</visible>
 					<depth>DepthBackground</depth>
 					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
@@ -1262,8 +1401,8 @@
 						<shadowcolor>text_shadow</shadowcolor>
 						<label>$LOCALIZE[33063]</label>
 						<onclick>SetFocus(9000)</onclick>
-						<texturefocus />
-						<texturenofocus />
+						<texturefocus/>
+						<texturenofocus/>
 					</control>
 				</control>
 				<include>TouchButtons</include>
@@ -1386,10 +1525,32 @@
 			</control>
 		</definition>
 	</include>
+	<!-- Estuary Panel -->
+	<include name="EstuaryContentPanel">
+		<param name="width">535</param>
+		<param name="left">-40</param>
+		<param name="right"></param>
+		<param name="top">-10%</param>
+		<param name="height">120%</param>
+		<param name="flipx">false</param>
+		<definition>
+			<control type="image">
+				<texture flipx="$PARAM[flipx]" colordiffuse="EDFFFFFF">lists/panel.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<width>$PARAM[width]</width>
+				<left>$PARAM[left]</left>
+				<right>$PARAM[right]</right>
+				<top>$PARAM[top]</top>
+				<height>$PARAM[height]</height>
+				<visible>!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			</control>
+		</definition>
+	</include>
 	<include name="ContentPanel">
 		<param name="width">500</param>
 		<param name="left">-40</param>
-		<param name="right"></param>
+		<param name="right"/>
 		<param name="top">-10%</param>
 		<param name="height">120%</param>
 		<param name="flipx">false</param>
@@ -1426,18 +1587,18 @@
 			<align>justify</align>
 			<usecontrolcoords>true</usecontrolcoords>
 			<include content="IconButton">
-				<param name="control_id" value="" />
-				<param name="onclick" value="SetFocus(9000)" />
-				<param name="icon" value="icons/settings.png" />
-				<param name="label" value="$LOCALIZE[10004]" />
-				<param name="visible" value="Window.IsMedia" />
+				<param name="control_id" value=""/>
+				<param name="onclick" value="SetFocus(9000)"/>
+				<param name="icon" value="icons/settings.png"/>
+				<param name="label" value="$LOCALIZE[10004]"/>
+				<param name="visible" value="Window.IsMedia"/>
 			</include>
 			<include content="IconButton">
-				<param name="control_id" value="" />
-				<param name="onclick" value="ActivateWindow(shutdownmenu)" />
-				<param name="icon" value="icons/power.png" />
-				<param name="label" value="$LOCALIZE[33060]" />
-				<param name="visible" value="!Window.IsMedia" />
+				<param name="control_id" value=""/>
+				<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
+				<param name="icon" value="icons/power.png"/>
+				<param name="label" value="$LOCALIZE[33060]"/>
+				<param name="visible" value="!Window.IsMedia"/>
 			</include>
 			<control type="group">
 				<width>120</width>
@@ -1445,10 +1606,10 @@
 					<top>0</top>
 					<width>120</width>
 					<height>120</height>
-					<label></label>
+					<label/>
 					<onclick>ActivateWindow(1103)</onclick>
 					<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-					<texturenofocus />
+					<texturenofocus/>
 				</control>
 				<control type="image">
 					<left>34</left>
@@ -1459,10 +1620,10 @@
 				</control>
 			</control>
 			<include content="IconButton">
-				<param name="control_id" value="" />
-				<param name="onclick" value="ActivateWindow(favourites)" />
-				<param name="icon" value="icons/favourites.png" />
-				<param name="label" value="$LOCALIZE[10134]" />
+				<param name="control_id" value=""/>
+				<param name="onclick" value="ActivateWindow(favourites)"/>
+				<param name="icon" value="icons/favourites.png"/>
+				<param name="label" value="$LOCALIZE[10134]"/>
 			</include>
 		</control>
 	</include>
@@ -1478,7 +1639,7 @@
 			<animation effect="fade" start="0" end="100" time="400" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(home)">WindowClose</animation>
 			<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-			<texturenofocus />
+			<texturenofocus/>
 			<radioposx>30</radioposx>
 			<radiowidth>60</radiowidth>
 			<radioheight>60</radioheight>
@@ -1499,7 +1660,7 @@
 			<onclick>Dialog.Close(all,true)</onclick>
 			<onclick>Action(FullScreen)</onclick>
 			<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-			<texturenofocus />
+			<texturenofocus/>
 			<radioposx>30</radioposx>
 			<radiowidth>60</radiowidth>
 			<radioheight>60</radioheight>
@@ -1520,7 +1681,7 @@
 			<aligny>center</aligny>
 			<onfocus>Action(Back)</onfocus>
 			<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-			<texturenofocus />
+			<texturenofocus/>
 			<radioposx>30</radioposx>
 			<radiowidth>60</radiowidth>
 			<radioheight>60</radioheight>
@@ -1573,9 +1734,10 @@
 				</control>
 				<control type="image">
 					<include>FocusBounce</include>
-					<left>-5</left>
-					<width>410</width>
-					<height>270</height>
+					<left>-7</left>
+					<top>-2</top>
+					<width>414</width>
+					<height>274</height>
 					<texture colordiffuse="button_focus">masks/settingspanel.png</texture>
 					<bordersize>20</bordersize>
 					<include>Animation_FocusTextureFade</include>
@@ -1601,160 +1763,23 @@
 			</control>
 		</focusedlayout>
 	</include>
-
 	<!-- MY INCLUDES -->
-
 	<include name="VisibleFadeEffect">
 		<animation effect="fade" time="1300">VisibleChange</animation>
 	</include>
-	
-	<include name="RainDropAnimationBackground">
-		<control type="group">
-			<visible>Skin.HasSetting(HideRainDrops) + ![Player.HasVideo + Player.HasAudio] + Skin.HasSetting(no_fanart)</visible>
-			<include>VisibleFadeEffect</include>
-			<control type="image">
-				<description>Raindrop 9 animation</description>
-				<left>1600</left>
-				<top>400</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="2000" start="0" end="100" time="200"/>
-					<effect type="fade" delay="2500" start="100" end="0" time="500"/>
-					<effect type="zoom" delay="2000" start="30" end="500" time="1000" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 1 animation</description>
-				<left>250</left>
-				<top>200</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" start="0" end="100" time="200"/>
-					<effect type="fade" start="100" end="0" delay="2500" time="1000"/>
-					<effect type="zoom" center="auto" start="30" end="1500" delay="0" time="3500" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 2 animation</description>
-				<left>700</left>
-				<top>130</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="400" start="0" end="100" time="200"/>
-					<effect type="fade" delay="1000" start="100" end="0" time="1600"/>
-					<effect type="zoom" delay="400" start="30" end="700" time="3000" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 3 animation</description>
-				<left>300</left>
-				<top>700</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="800" start="0" end="100" time="200"/>
-					<effect type="fade" delay="2400" start="100" end="0" time="2000"/>
-					<effect type="zoom" delay="800" start="30" end="1000" time="2500" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 4 animation</description>
-				<left>1550</left>
-				<top>800</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="1500" start="0" end="100" time="200"/>
-					<effect type="fade" delay="2100" start="100" end="0" time="800"/>
-					<effect type="zoom" delay="1500" start="30" end="1200" time="2500" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 5 animation</description>
-				<left>700</left>
-				<top>550</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="2200" start="0" end="100" time="200"/>
-					<effect type="fade" delay="2400" start="100" end="0" time="3000"/>
-					<effect type="zoom" delay="2200" start="30" end="1400" time="3700" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 6 animation</description>
-				<left>1400</left>
-				<top>100</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="1500" start="0" end="100" time="200"/>
-					<effect type="fade" delay="2100" start="100" end="0" time="2000"/>
-					<effect type="zoom" delay="1500" start="30" end="1200" time="3000" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 7 animation</description>
-				<left>1150</left>
-				<top>450</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="1000" start="0" end="100" time="200"/>
-					<effect type="fade" delay="700" start="100" end="0" time="3500"/>
-					<effect type="zoom" delay="1000" start="30" end="700" time="1500" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-			<control type="image">
-				<description>Raindrop 8 animation</description>
-				<left>1000</left>
-				<top>800</top>
-				<width>128</width>
-				<height>128</height>
-				<texture colordiffuse="dimgrey" background="true">rain-drop.png</texture>
-				<visible>true</visible>
-				<animation type="conditional" reversible="false" loop="true" condition="true">
-					<effect type="fade" delay="700" start="0" end="100" time="200"/>
-					<effect type="fade" delay="300" start="100" end="0" time="4000"/>
-					<effect type="zoom" delay="700" start="30" end="900" time="3000" center="auto" tween="quadratic"/>
-				</animation>
-			</control>
-		</control>
-	</include>
-	
 	<include name="ProgressBar">
 		<control type="progress">
 			<left>$PARAM[left]</left>
 			<top>$PARAM[top]</top>
 			<width>$PARAM[width]</width>
 			<height>1</height>
-			<texturebg></texturebg>
+			<texturebg/>
 			<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
 			<info>Container($PARAM[id]).ListItem.Property(WatchedProgress)</info>
 			<visible>[String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)] | [Integer.IsGreater(Container($PARAM[id]).ListItem.Property(UnwatchedEpisodes),0) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)] | [String.IsEqual(ListItem.DBtype,episode) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)]</visible>
 			<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 		</control>
 	</include>
-
 	<include name="RatingsInfoPanel">
 		<control type="grouplist">
 			<left>$PARAM[left]</left>
@@ -1925,7 +1950,7 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="7000" time="2000" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>!Skin.HasSetting(Enable.AlternateInfo)</visible>
+				<visible>Skin.HasSetting(Enable.AlternateInfo)</visible>
 			</control>
 			<control type="textbox">
 				<height max="$PARAM[height_alt_movie]">auto</height>
@@ -1933,7 +1958,7 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>Skin.HasSetting(Enable.AlternateInfo) + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,episode) | String.IsEqual(ListItem.DBtype,season)]</visible>
+				<visible>!Skin.HasSetting(Enable.AlternateInfo) + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,episode) | String.IsEqual(ListItem.DBtype,season)]</visible>
 			</control>
 			<control type="textbox">
 				<height max="$PARAM[height_alt_tvshow]">auto</height>
@@ -1941,9 +1966,41 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
+				<visible>!Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
 			</control>
 		</control>
 	</include>
-	
+	<include name="TopBarCustomMenuDialog">
+		<param name="height" default="350"/>
+		<param name="list_height" default="210"/>
+		<param name="down_posy" default="360"/>
+		<definition>
+			<control type="group">
+				<centerleft>50%</centerleft>
+				<width>600</width>
+				<centertop>50%</centertop>
+				<height>$PARAM[height]</height>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600"/>
+					<param name="height" value="$PARAM[height]"/>
+					<param name="header_label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
+					<param name="header_id" value=""/>
+					<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+				</include>
+				<control type="panel" id="9000">
+					<height>$PARAM[list_height]</height>
+					<include>ButtonMenuList_dialog</include>
+					<content>
+						<include content="TopBarCustomMenuItems"/>
+					</content>
+				</control>
+				<include content="UpDownArrows">
+					<param name="container_id" value="9000"/>
+					<param name="posx" value="276"/>
+					<param name="up_posy" value="-35"/>
+					<param name="down_posy" value="$PARAM[down_posy]"/>
+				</include>
+			</control>
+		</definition>
+	</include>
 </includes>

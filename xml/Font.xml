@@ -66,6 +66,12 @@
 			<style>lighten</style>
 		</font>
 		<font>
+			<name>font40</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>40</size>
+			<style>lighten</style>
+		</font>
+		<font>
 			<name>font45</name>
 			<filename>NotoSans-Regular.ttf</filename>
 			<size>45</size>
@@ -74,6 +80,12 @@
 		<font>
 			<name>font60</name>
 			<filename>NotoSans-Regular.ttf</filename>
+			<size>65</size>
+			<style>lighten</style>
+		</font>
+		<font>
+			<name>font_clock_bold</name>
+			<filename>Roboto-Bold.ttf</filename>
 			<size>60</size>
 			<style>lighten</style>
 		</font>
@@ -85,7 +97,7 @@
 		<font>
 			<name>font_clock_small</name>
 			<filename>Roboto-Thin.ttf</filename>
-			<size>40</size>
+			<size>45</size>
 		</font>
 		<!-- Title Fonts -->
 		<font>
@@ -217,6 +229,11 @@
 			<size>37</size>
 		</font>
 		<font>
+			<name>font40</name>
+			<filename>arial.ttf</filename>
+			<size>40</size>
+		</font>
+		<font>
 			<name>font45</name>
 			<filename>arial.ttf</filename>
 			<size>45</size>
@@ -228,9 +245,21 @@
 			<style>lighten</style>
 		</font>
 		<font>
+			<name>font_clock_bold</name>
+			<filename>arial.ttf</filename>
+			<size>55</size>
+			<style>lighten</style>
+		</font>
+		<font>
 			<name>font_clock</name>
 			<filename>arial.ttf</filename>
-			<size>70</size>
+			<size>60</size>
+			<style>lighten</style>
+		</font>
+		<font>
+			<name>font_clock_small</name>
+			<filename>arial.ttf</filename>
+			<size>40</size>
 			<style>lighten</style>
 		</font>
 		<!-- Title Fonts -->

@@ -13,8 +13,8 @@
 		<height>76</height>
 		<radiowidth>74</radiowidth>
 		<radioheight>74</radioheight>
-		<font></font>
-		<texturenofocus />
+		<font/>
+		<texturenofocus/>
 		<radioposx>1</radioposx>
 		<radioposy>0</radioposy>
 	</include>
@@ -35,8 +35,8 @@
 				<focusedcolor>focused_text</focusedcolor>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 				<alttexturefocus colordiffuse="button_focus">masks/focus.png</alttexturefocus>
-				<texturenofocus />
-				<alttexturenofocus />
+				<texturenofocus/>
+				<alttexturenofocus/>
 				<onclick>noop</onclick>
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick]</onclick>
 				<altclick>noop</altclick>
@@ -64,7 +64,7 @@
 			<textcolor>unfocused_text</textcolor>
 			<focusedcolor>focused_text</focusedcolor>
 			<texturefocus colordiffuse="button_focus">masks/focus-long.png</texturefocus>
-			<texturenofocus />
+			<texturenofocus/>
 		</definition>
 	</include>
 	<include name="DefaultSystemSettingsButton">
@@ -83,7 +83,7 @@
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>
 			<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
-			<texturenofocus />
+			<texturenofocus/>
 		</definition>
 	</include>
 	<include name="DialogSettingButton">
@@ -105,7 +105,7 @@
 		<left>0</left>
 		<top>0</top>
 		<height>75</height>
-		<label></label>
+		<label/>
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font25_title</font>
@@ -132,7 +132,7 @@
 		<param name="height">67</param>
 		<param name="wrapmultiline">false</param>
 		<param name="font">font25_title</param>
-		<param name="onclick"></param>
+		<param name="onclick"/>
 		<param name="visible">true</param>
 		<definition>
 			<control type="button" id="$PARAM[id]">
@@ -157,7 +157,7 @@
 		<height>120</height>
 		<textoffsety>27</textoffsety>
 		<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-		<texturenofocus />
+		<texturenofocus/>
 		<align>center</align>
 		<aligny>top</aligny>
 		<font>font45</font>
@@ -171,7 +171,7 @@
 				<align>left</align>
 				<aligny>top</aligny>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
-				<texturenofocus />
+				<texturenofocus/>
 				<textoffsetx>40</textoffsetx>
 				<textoffsety>35</textoffsety>
 				<label>$PARAM[label]</label>
@@ -192,10 +192,10 @@
 				<aligny>center</aligny>
 				<onclick>$PARAM[onclick]</onclick>
 				<onclick>$PARAM[onclick_2]</onclick>
-				<font></font>
+				<font/>
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-				<texturenofocus />
+				<texturenofocus/>
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>
@@ -217,10 +217,10 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<onclick>$PARAM[onclick]</onclick>
-				<font></font>
+				<font/>
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-				<texturenofocus />
+				<texturenofocus/>
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>
@@ -334,7 +334,7 @@
 		<left>0</left>
 		<top>80</top>
 		<width>600</width>
-		<height>380</height>
+		<height>600</height>
 		<onleft>9000</onleft>
 		<onright>9000</onright>
 		<onup>9000</onup>
@@ -373,5 +373,50 @@
 				<textcolor>focused_text</textcolor>
 			</control>
 		</focusedlayout>
+	</include>
+	<include name="ButtonMenuList_dialog">
+		<param name="panel_height">210</param>
+		<definition>
+			<left>0</left>
+			<top>100</top>
+			<width>600</width>
+			<height>$PARAM[panel_height]</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<orientation>vertical</orientation>
+			<itemlayout height="70" width="600">
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>70</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>unfocused_text</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="70" width="600">
+				<control type="image">
+					<left>25</left>
+					<top>0</top>
+					<width>550</width>
+					<height>70</height>
+					<texture colordiffuse="button_focus">masks/focus.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>70</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<textcolor>focused_text</textcolor>
+				</control>
+			</focusedlayout>
+		</definition>
 	</include>
 </includes>
