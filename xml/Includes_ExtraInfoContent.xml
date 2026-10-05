@@ -2,6 +2,10 @@
 <includes>
 	<include name="Changelog">
 		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.fentastic)] by Zaxxon709[/COLOR][/B]
+- Refined the Estuary Look & Feel main menu
+- Fixed an incorrect Top Bar Overlay timer reference that could cause repeated skin timer errors
+
+[B][COLOR accent_color]Version 100.0.33a[/COLOR][/B]
 - Fixed overlapping labels on focused BigLandscapeInfo widgets
 - Slowed down title scrolling speed for LandscapeInfo and BigLandscapeInfo widgets
 - Standardized genre, sports, and main-menu icon sizing for a more consistent appearance
