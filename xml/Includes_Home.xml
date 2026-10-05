@@ -2385,7 +2385,7 @@
 				<visible>!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
 				<control type="image">
 					<left>0</left>
-					<width>450</width>
+					<width>475</width>
 					<height>108</height>
 					<texture colordiffuse="button_focus">colors/white.png</texture>
 					<visible>!Skin.HasSetting(NoHighlightMainMenu)</visible>
@@ -2398,10 +2398,10 @@
 					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu)</visible>
 				</control>
 				<control type="image">
-					<left>-16</left>
-					<top>-16</top>
-					<width>140</width>
-					<height>140</height>
+					<left>0</left>
+					<top>0</top>
+					<width>108</width>
+					<height>108</height>
 					<aspectratio>keep</aspectratio>
 					<texture colordiffuse="focused_text">$INFO[ListItem.Art(thumb)]</texture>
 					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
@@ -2409,11 +2409,11 @@
 				<!-- Focused label with icons enabled -->
 				<control type="label">
 					<include>FocusBounce</include>
-					<left>118</left>
+					<left>123</left>
 					<height>108</height>
-					<width>292</width>
+					<width>327</width>
 					<aligny>center</aligny>
-					<font>font45</font>
+					<font>font40</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>focused_text</textcolor>
 					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
@@ -2425,7 +2425,7 @@
 					<height>108</height>
 					<width>410</width>
 					<aligny>center</aligny>
-					<font>font45</font>
+					<font>font40</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>focused_text</textcolor>
 					<visible>!Skin.HasSetting(NoIconMainMenu)</visible>
@@ -2509,19 +2509,19 @@
 				<visible>!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
 				<!-- Same icon and label geometry as the focused layout -->
 				<control type="image">
-					<left>-16</left>
-					<top>-16</top>
-					<width>140</width>
-					<height>140</height>
+					<left>0</left>
+					<top>0</top>
+					<width>108</width>
+					<height>108</height>
 					<aspectratio>keep</aspectratio>
 					<texture colordiffuse="grey">$INFO[ListItem.Art(thumb)]</texture>
 					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
 				</control>
 				<!-- Label with icons enabled -->
 				<control type="label">
-					<left>118</left>
+					<left>123</left>
 					<height>108</height>
-					<width>292</width>
+					<width>327</width>
 					<aligny>center</aligny>
 					<font>font37</font>
 					<label>$INFO[ListItem.Label]</label>

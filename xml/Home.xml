@@ -1180,9 +1180,9 @@
 						<!-- Classic FENtastic: Divider disabled -->
 						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-25,50" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,25" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-25,25" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<visible allowhiddenfocus="true">![Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)]</visible>
 						<animation effect="fade" start="0" end="100" time="0" delay="300">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
