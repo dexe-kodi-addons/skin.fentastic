@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1161">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>420</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600"/>
+				<param name="height" value="$VAR[DialogHeight4]" />
+				<param name="header_label" value="Choose Default Home Section"/>
+				<param name="header_id" value=""/>
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+			</include>
+			<control type="panel" id="9000">
+				<onback>Dialog.Close(1161)</onback>
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="280"/>
+				</include>
+				<content>
+					<item>
+						<label>Movies</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,movies)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,Movies)</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton) + Skin.HasSetting(CinemaMoviesHasWidgets)</visible>
+					</item>
+					<item>
+						<label>TV Shows</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,tvshows)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,TV Shows)</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton) + Skin.HasSetting(CinemaTVShowsHasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom1ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom1)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom1ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom1Button) + Skin.HasSetting(CinemaCustom1HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom2ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom2)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom2ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom2Button) + Skin.HasSetting(CinemaCustom2HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom3ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom3)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom3ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom3Button) + Skin.HasSetting(CinemaCustom3HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom4ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom4)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom4ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom4Button) + Skin.HasSetting(CinemaCustom4HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom5ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom5)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom5ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom5Button) + Skin.HasSetting(CinemaCustom5HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom6ToggleLabelVar]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,custom6)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$VAR[MenuCustom6ToggleLabelVar])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom6Button) + Skin.HasSetting(CinemaCustom6HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[2]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,music)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[2])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20389]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,musicvideos)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[20389])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
+					</item>
+					<item>
+						<label>Live TV</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,livetv)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,Live TV)</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[19021]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,radio)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[19021])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[15016]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,games)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[15016])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[24001]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,addons)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[24001])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[1]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,pictures)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[1])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[3]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,video)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[3])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[10134]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,favorites)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[10134])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[8]</label>
+						<onclick>Skin.SetString(CinemaDefaultSection,weather)</onclick>
+						<onclick>Skin.SetString(CinemaDefaultSectionLabel,$LOCALIZE[8])</onclick>
+						<onclick>Dialog.Close(1161)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>
