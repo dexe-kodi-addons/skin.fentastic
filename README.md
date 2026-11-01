@@ -6,7 +6,7 @@ FENtastic Plus expands on the original FENtastic experience with additional cust
 
 Please note: FENtastic Plus is a work in progress. New features are added frequently, and while every effort is made to keep things stable, you may occasionally run into bugs or features that are still being refined.<br>
 
-<b>Fixes & improvements by dEXE</b>
+<b>Fixes & improvements by dEXE</b><br>
 Reworked and restyled several dialogs and overlays across the skin - including the context menu, power/tools menus, video OSD, top bar, and video info screen.
 Introduced a brand-new focused list-item style with nine appearance options throughout the List and WideList views (Skin Settings/Options).
 Various other small tweaks and refinements throughout.
