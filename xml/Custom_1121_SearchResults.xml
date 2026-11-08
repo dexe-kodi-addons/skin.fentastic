@@ -7,6 +7,95 @@
 		<control type="group" id="70900">
 			<visible>!String.IsEqual(Skin.String(SearchBusy),1)</visible>
 			<include>DefaultBackground</include>
+			<!-- Independent search background brightness -->
+			<control type="image">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" colordiffuse="FF555555">$INFO[Skin.String(SearchResultsBackground)]</texture>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundBrightness),Low)</visible>
+			</control>
+			<control type="image">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" colordiffuse="FF888888">$INFO[Skin.String(SearchResultsBackground)]</texture>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundBrightness),Medium)</visible>
+			</control>
+			<control type="image">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" colordiffuse="FFBBBBBB">$INFO[Skin.String(SearchResultsBackground)]</texture>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundBrightness),High)</visible>
+			</control>
+			<control type="image">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" colordiffuse="FFFFFFFF">$INFO[Skin.String(SearchResultsBackground)]</texture>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundBrightness),Highest)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="1AFFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),10%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="33FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),20%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="4CFFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),30%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="66FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),40%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="80FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),50%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="99FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),60%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="B2FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),70%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="CCFFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),80%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="E6FFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),90%)</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="FFFFFFFF">dialogs/separator-grey.png</texture>
+				<colordiffuse>button_focus</colordiffuse>
+				<visible>String.IsEqual(Skin.String(SearchBackgroundOpacity),100%)</visible>
+			</control>
 			<control type="multiimage">
 				<depth>DepthBackground</depth>
 				<include>FullScreenDimensions</include>
@@ -17,7 +106,7 @@
 				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 				<animation effect="fade" time="400">VisibleChange</animation>
 				<imagepath background="true" colordiffuse="bg_overlay">$VAR[HomeFanartVar]</imagepath>
-				<visible>!Player.HasMedia</visible>
+				<visible>!Player.HasMedia + String.IsEmpty(Skin.String(SearchResultsBackground))</visible>
 			</control>
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
@@ -41,7 +130,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),0)
 									   + System.AddonIsEnabled(plugin.video.themoviedb.helper)">
-								<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=movie&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=movie&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -52,7 +142,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),1)
 									   + System.AddonIsEnabled(plugin.video.fenlight)">
-								<param name="content_path" value="plugin://plugin.video.fenlight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.fenlight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -63,7 +154,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),2)
 									   + System.AddonIsEnabled(plugin.video.umbrella)">
-								<param name="content_path" value="plugin://plugin.video.umbrella/?action=movieSearchterm&amp;name=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.umbrella/?action=movieSearchterm&amp;name=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -74,7 +166,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),3)
 									   + System.AddonIsEnabled(plugin.video.pov)">
-								<param name="content_path" value="plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -85,7 +178,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),4)
 									   + System.AddonIsEnabled(plugin.video.gears)">
-								<param name="content_path" value="plugin://plugin.video.gears/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.gears/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -96,7 +190,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
 									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -110,7 +205,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),0)
 									   + System.AddonIsEnabled(plugin.video.themoviedb.helper)">
-								<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=tv&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=tv&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -121,7 +217,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),1)
 									   + System.AddonIsEnabled(plugin.video.fenlight)">
-								<param name="content_path" value="plugin://plugin.video.fenlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.fenlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -132,7 +229,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),2)
 									   + System.AddonIsEnabled(plugin.video.umbrella)">
-								<param name="content_path" value="plugin://plugin.video.umbrella/?action=tvSearchterm&amp;name=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.umbrella/?action=tvSearchterm&amp;name=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -143,7 +241,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),3)
 									   + System.AddonIsEnabled(plugin.video.pov)">
-								<param name="content_path" value="plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -154,7 +253,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),4)
 									   + System.AddonIsEnabled(plugin.video.gears)">
-								<param name="content_path" value="plugin://plugin.video.gears/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.gears/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -165,7 +265,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
 									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -212,7 +313,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideCollectionsResults)
 									   + String.IsEqual(Skin.String(current_search_provider),0)
 									   + System.AddonIsEnabled(plugin.video.themoviedb.helper)">
-								<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=collection&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=collection&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Collections"/>
 						  		<param name="widget_target" value="videos"/>
@@ -223,7 +325,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideCollectionsResults)
 									   + String.IsEqual(Skin.String(current_search_provider),3)
 									   + System.AddonIsEnabled(plugin.video.pov)">
-								<param name="content_path" value="plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_search_collections&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_search_collections&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Collections"/>
 						  		<param name="widget_target" value="videos"/>
@@ -237,7 +340,8 @@
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),0)
 									   + System.AddonIsEnabled(plugin.video.themoviedb.helper)">
-								<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=keyword&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=keyword&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -248,7 +352,8 @@
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),1)
 									   + System.AddonIsEnabled(plugin.video.fenlight)">
-								<param name="content_path" value="plugin://plugin.video.fenlight/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.fenlight/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -259,7 +364,8 @@
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),1)
 									   + System.AddonIsEnabled(plugin.video.fenlight)">
-								<param name="content_path" value="plugin://plugin.video.fenlight/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.fenlight/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -270,7 +376,8 @@
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
 									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -281,7 +388,8 @@
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
 									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+								<param name="keep_empty" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -445,7 +553,7 @@
 					<control type="group">
 						<visible>Integer.IsEqual(Skin.String(SearchHistoryCount),0) + !String.IsEqual(Skin.String(SearchBusy),1)</visible>
 						<include content="ImageWidget">
-							<param name="left">50</param>
+							<param name="left">310</param>
 							<param name="text_label" value="Your search history is currently empty. Would you like to perform a new search or return to the home screen?"/>
 							<param name="button_label" value="New search"/>
 							<param name="button_onclick" value="RunScript(script.fentastic.helper,mode=search_input)"/>

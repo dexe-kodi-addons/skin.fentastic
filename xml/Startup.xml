@@ -6,6 +6,8 @@
 	<onload condition="String.IsEmpty(Skin.String(CategoryWidgetItemLimit))">Skin.SetString(CategoryWidgetItemLimit,20)</onload>
 	<onload condition="String.IsEmpty(Skin.String(StackedWidgetItemLimit))">Skin.SetString(StackedWidgetItemLimit,20)</onload>
 	<onload condition="String.IsEmpty(Skin.String(DefaultBackgroundBrightness))">Skin.SetString(DefaultBackgroundBrightness,Medium)</onload>
+	<onload condition="String.IsEmpty(Skin.String(SearchBackgroundBrightness))">Skin.SetString(SearchBackgroundBrightness,Medium)</onload>
+	<onload condition="String.IsEmpty(Skin.String(SearchBackgroundOpacity))">Skin.SetString(SearchBackgroundOpacity,Off)</onload>
 	<onload condition="String.IsEmpty(Skin.String(DefaultFanartBrightness))">Skin.SetString(DefaultFanartBrightness,Medium)</onload>
 	<onload condition="String.IsEmpty(Skin.String(DefaultRainDropBrightness))">Skin.SetString(DefaultRainDropBrightness,Medium)</onload>
 	<onload condition="String.IsEmpty(Skin.String(backup_directory))">Skin.SetString(backup_directory,special://home/backups/FENtastic_Plus/)

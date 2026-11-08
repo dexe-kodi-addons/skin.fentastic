@@ -580,6 +580,7 @@
 	</include>
 	<include name="WidgetListBigPoster">
 		<param name="onclick_condition">false</param>
+		<param name="keep_empty">false</param>
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
@@ -595,7 +596,7 @@
 				<onright>$PARAM[list_id]</onright>
 				<orientation>horizontal</orientation>
 				<movement>4</movement>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating | $PARAM[keep_empty]</visible>
 				<width>2312</width>
 				<height>465</height>
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
