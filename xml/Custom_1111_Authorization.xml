@@ -29,6 +29,24 @@
 						<onclick>ActivateWindow(1108)</onclick>
 					</item>
 					<item>
+						<label>Simkl</label>
+						<visible>!Skin.HasSetting(AuthNoSimkl)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>ActivateWindow(1162)</onclick>
+					</item>
+					<item>
+						<label>MDBList</label>
+						<visible>!Skin.HasSetting(AuthNoMDBList)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>ActivateWindow(1163)</onclick>
+					</item>
+					<item>
+						<label>PunchPlay</label>
+						<visible>!Skin.HasSetting(AuthNoPunchPlay)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>ActivateWindow(1164)</onclick>
+					</item>
+					<item>
 						<label>Real-Debrid</label>
 						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
