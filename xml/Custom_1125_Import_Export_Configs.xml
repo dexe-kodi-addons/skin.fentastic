@@ -11,7 +11,7 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight1-2]" />
-				<param name="header_label" value="Import & Export Configs" />
+				<param name="header_label" value="Import & Export" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>

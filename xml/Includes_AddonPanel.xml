@@ -219,25 +219,24 @@
 					</control>
 				</control>
 				<control type="group">
-					<height>58</height>
+					<height>26</height>
 					<visible>!String.IsEmpty(ListItem.AddonLastUpdated)</visible>
 					<control type="label">
 						<left>0</left>
-						<width>175</width>
+						<width>165</width>
 						<height>26</height>
-						<aligny>top</aligny>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<label>Last updated:</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
-					<control type="textbox">
-						<left>185</left>
-						<width>170</width>
-						<height>58</height>
-						<aligny>top</aligny>
+					<control type="label">
+						<left>176</left>
+						<width>234</width>
+						<height>26</height>
+						<aligny>center</aligny>
 						<font>font12</font>
 						<label>$INFO[ListItem.AddonLastUpdated]</label>
-						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>
@@ -400,25 +399,24 @@
 						</control>
 					</control>
 					<control type="group">
-						<height>58</height>
+						<height>28</height>
 						<visible>!String.IsEmpty(ListItem.AddonLastUpdated)</visible>
 						<control type="label">
 							<left>0</left>
-							<width>175</width>
+							<width>165</width>
 							<height>28</height>
-							<aligny>top</aligny>
+							<aligny>center</aligny>
 							<font>font12</font>
 							<label>Last updated:</label>
 							<textcolor>unfocused_text</textcolor>
 						</control>
-						<control type="textbox">
-							<left>185</left>
-							<width>170</width>
-							<height>58</height>
-							<aligny>top</aligny>
+						<control type="label">
+							<left>176</left>
+							<width>234</width>
+							<height>28</height>
+							<aligny>center</aligny>
 							<font>font12</font>
 							<label>$INFO[ListItem.AddonLastUpdated]</label>
-							<autoscroll>false</autoscroll>
 						</control>
 					</control>
 				</control>

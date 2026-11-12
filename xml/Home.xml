@@ -978,14 +978,14 @@
 					<param name="label" value="Maintenance &amp; Tools"/>
 					<param name="visible" value="Skin.HasSetting(Enable.MaintenanceTools)"/>
 				</include>
-<!-- Custom Menu -->
-<include content="IconButton">
-	<param name="control_id" value="1808"/>
-	<param name="onclick" value="ActivateWindow(1170)"/>
-	<param name="icon" value="icons/system.png"/>
-	<param name="label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
-	<param name="visible" value="Skin.HasSetting(Enable.TopBarCustomMenu)"/>
-</include>
+				<!-- Custom Menu -->
+				<include content="IconButton">
+					<param name="control_id" value="1808"/>
+					<param name="onclick" value="ActivateWindow(1170)"/>
+					<param name="icon" value="icons/system.png"/>
+					<param name="label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
+					<param name="visible" value="Skin.HasSetting(Enable.TopBarCustomMenu)"/>
+				</include>
 				<include content="IconButton">
 					<param name="control_id" value="1809"/>
 					<param name="onclick" value="ActivateWindow(settings)"/>
@@ -1937,7 +1937,25 @@
 							<height>70</height>
 							<aspectratio>keep</aspectratio>
 							<texture>special://xbmc/media/vendor_logo.png</texture>
-							<visible>Skin.HasSetting(EstuaryLookFeel) + String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(EstuaryLookFeel) + String.IsEmpty(Skin.String(customlogo)) + String.IsEqual(Skin.String(CurrentSkinColor),Estuary)</visible>
+						</control>
+						<control type="image">
+							<left>12</left>
+							<top>-10</top>
+							<aspectratio>keep</aspectratio>
+							<width>175</width>
+							<height>75</height>
+							<texture colordiffuse="button_focus" fallback="special://skin/media/logos/K-logo.png">$VAR[CustomLogoImage]</texture>
+							<visible>Skin.HasSetting(EstuaryLookFeel) + String.IsEmpty(Skin.String(customlogo)) + !String.IsEqual(Skin.String(CurrentSkinColor),Estuary)</visible>
+						</control>
+						<control type="image">
+							<left>55</left>
+							<top>-10</top>
+							<aspectratio>keep</aspectratio>
+							<width>258</width>
+							<height>75</height>
+							<texture fallback="special://skin/media/logos/letters.png">$VAR[CustomLogoImage]</texture>
+							<visible>Skin.HasSetting(EstuaryLookFeel) + String.IsEmpty(Skin.String(customlogo)) + !String.IsEqual(Skin.String(CurrentSkinColor),Estuary)</visible>
 						</control>
 					</control>
 				</control>
