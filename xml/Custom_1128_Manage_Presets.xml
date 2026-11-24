@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1128">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>560</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="$VAR[DialogHeight6]" />
+				<param name="header_label" value="Manage Presets" />
+				<param name="header_id" value="" />
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
+			</include>
+			<control type="panel" id="9000">
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="420" />
+				</include>
+				<onback>Dialog.Close(1128)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1128),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1128),true)">ClearProperty(FENtastic.DirectDialog1128,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1128),true)">ActivateWindow(1126)</onback>
+				<content>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.0)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.0))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=0)</onclick>
+					</item>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.1)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.1))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=1)</onclick>
+					</item>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.2)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.2))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=2)</onclick>
+					</item>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.3)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.3))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=3)</onclick>
+					</item>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.4)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.4))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=4)</onclick>
+					</item>
+					<item>
+						<label>$INFO[Window(Home).Property(FENtastic.Preset.Name.5)]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(FENtastic.Preset.Name.5))</visible>
+						<onclick>Dialog.Close(1128)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=preset_actions&amp;index=5)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

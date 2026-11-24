@@ -2,6 +2,14 @@
 <includes>
 	<include name="Changelog">
 		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.fentastic)] by Zaxxon709[/COLOR][/B]
+- Added one-click preset switching from the top bar
+- Renamed Pre-configurations to Presets throughout the skin
+- Added backup, restore, import, and export support for Advanced Settings
+- Reorganized and simplified the Backup & Restore menus
+- Updated Custom Menu shortcuts to include the latest helper actions and skin dialogs
+- Added 13 customizable list item focus styles, configurable under Skin Settings → Look & Feel
+
+[B][COLOR accent_color]Version 100.0.35b[/COLOR][/B]
 - Added optional backup of Kodi's guisettings.xml and favourites.xml when creating a user configuration backup.
 - Fixed an issue where skin colors were not correctly applied when restoring user backups.
 - Updated the Estuary Look & Feel logo to dynamically reflect the selected skin color.
