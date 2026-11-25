@@ -21,7 +21,9 @@
 					<param name="panel_height" value="280" />
 				</include>
 				<onback>Dialog.Close(1153)</onback>
-				<onback>ActivateWindow(1152)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1153),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1153),true)">ClearProperty(FENtastic.DirectDialog1153,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1153),true)">ActivateWindow(1152)</onback>
 				<content>
 					<item>
 						<label>Reset Artwork &amp; Color</label>

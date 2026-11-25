@@ -20,7 +20,9 @@
 					<param name="panel_height" value="140" />
 				</include>
 				<onback>Dialog.Close(1157)</onback>
-				<onback>ActivateWindow(1123)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1157),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1157),true)">ClearProperty(FENtastic.DirectDialog1157,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1157),true)">ActivateWindow(1123)</onback>
 				<content>
 					<item>
 						<label>Restore Default Skin Settings</label>

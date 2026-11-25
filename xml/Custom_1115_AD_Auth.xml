@@ -18,9 +18,9 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1115)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1115),true)">ActivateWindow(1111)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1115),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1115),true)">ClearProperty(FENtastic.DirectDialog1115,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(FENtastic.DirectDialog1115),true)">ActivateWindow(1111)</onback>
 				<content>
 					<item>
 						<label>Fen Light</label>

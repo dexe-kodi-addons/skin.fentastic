@@ -986,6 +986,14 @@
 					<param name="label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
 					<param name="visible" value="Skin.HasSetting(Enable.TopBarCustomMenu)"/>
 				</include>
+				<!-- Quick Presets -->
+				<include content="PresetSwitchIconButton">
+					<param name="control_id" value="1813"/>
+					<param name="onclick" value="RunScript(script.fentastic.helper,mode=select_quick_preset_topbar)"/>
+					<param name="icon" value="icons/profiles/presets.png"/>
+					<param name="label" value="My Presets"/>
+					<param name="visible" value="Skin.HasSetting(Enable.TopBarMyPresets)"/>
+				</include>
 				<include content="IconButton">
 					<param name="control_id" value="1809"/>
 					<param name="onclick" value="ActivateWindow(settings)"/>
@@ -1609,11 +1617,11 @@
 						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: divider hidden -->
 						<animation effect="slide" start="0,0" end="0,15" time="0" condition="Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<visible>Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(Enable.TopBarCustomMenu)</visible>
+						<visible>Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(Enable.TopBarMyPresets) + !Skin.HasSetting(Enable.TopBarCustomMenu)</visible>
 						<orientation>horizontal</orientation>
-						<itemgap>20</itemgap>
-						<left>10</left>
-						<width>475</width>
+						<itemgap>0</itemgap>
+						<left>-5</left>
+						<width>560</width>
 						<height>110</height>
 						<top>115</top>
 						<onup>SetFocus(9000,99,absolute)</onup>
@@ -1670,7 +1678,7 @@
 						</include>
 					</control>
 					<control type="grouplist" id="700">
-						<visible>![Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(Enable.TopBarCustomMenu)]</visible>
+						<visible>![Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(Enable.TopBarMyPresets) + !Skin.HasSetting(Enable.TopBarCustomMenu)]</visible>
 						<animation effect="slide" start="0,0" end="-60,0" time="0" condition="Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools)">Conditional</animation>
 						<!-- FENtastic Plus: Divider enabled -->
 						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
@@ -1722,6 +1730,14 @@
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Show Shutdown Menu)"/>
+						</include>
+						<!-- Quick Presets -->
+						<include content="PresetSwitchIconButton">
+							<param name="control_id" value="818"/>
+							<param name="onclick" value="RunScript(script.fentastic.helper,mode=select_quick_preset_topbar)"/>
+							<param name="icon" value="icons/profiles/presets.png"/>
+							<param name="label" value="My Presets"/>
+							<param name="visible" value="Skin.HasSetting(Enable.TopBarMyPresets)"/>
 						</include>
 						<!-- Search: Open Dialog -->
 						<include content="IconButton">
@@ -1778,7 +1794,8 @@
 							<param name="label" value="$LOCALIZE[21417]"/>
 							<param name="visible" value="Skin.HasSetting(Enable.MaintenanceTools)"/>
 						</include>
-						<!-- Custom Menu -->
+
+					<!-- Custom Menu -->
 						<include>FENtasticTopBarCustomMenuButton</include>
 						<!-- Fullscreen Video -->
 						<include content="IconButton">
